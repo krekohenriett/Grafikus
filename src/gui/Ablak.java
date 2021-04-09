@@ -5,6 +5,9 @@
  */
 package gui;
 
+import java.util.Random;
+import java.util.Scanner;
+
 /**
  *
  * @author User1
@@ -102,6 +105,11 @@ public class Ablak extends javax.swing.JFrame {
         });
 
         jBMegoldas.setText("Kérem a megoldást!");
+        jBMegoldas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jBMegoldasMouseClicked(evt);
+            }
+        });
 
         jBUjra.setText("Újra");
 
@@ -191,19 +199,55 @@ public class Ablak extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+//        Random rnd=new Random();
+//        int szam= rnd.nextInt(101);
+////        System.out.println(szam);
+//        int oszto=rnd.nextInt(101);
+////        System.out.println(oszto);
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
-        String f = "12/3";
-        System.out.println();
-                System.out.println("12/2=");
+        Random rnd=new Random();
+        int szam= rnd.nextInt(101);
+//        System.out.println(szam);
+        int oszto=rnd.nextInt(101);
+//        System.out.println(oszto);
+System.out.println("");        System.out.println("Feladat: ");
+
+        System.out.printf(szam+"/"+ oszto+"=");
+        System.out.println("");
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Kérem az eredményt: ");
+        int valasz=sc.nextInt();
+//        System.out.println(valasz);
+        System.out.println("");
+        int eredmeny= szam/oszto;
+        if (valasz!=eredmeny) {
+            System.out.println("Rossz válasz. Ez lett volna a helyes válasz: "+eredmeny);
+        }else{
+            System.out.println("Helyes válasz!");
+        }
+        
+//        System.out.println(eredmeny);
+
+//        String f = "12/3";
+//        System.out.println();
+//                System.out.println("12/2=");
                 
      
     }//GEN-LAST:event_jComboBox1ActionPerformed
  
     private void jBMasikFeladatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBMasikFeladatActionPerformed
         // TODO add your handling code here:
+//        System.out.println("");
         System.out.println("*másik feladat*");
+////        Random rnd=new Random();
+////        int szam= rnd.nextInt(101);
+//////        System.out.println(szam);
+////        int oszto=rnd.nextInt(101);
+////        System.out.println(oszto);
+//
+//        System.out.printf(szam+"/"+ oszto+"=");
+////        System.out.println("");
     }//GEN-LAST:event_jBMasikFeladatActionPerformed
 
     private void JfeladatInputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_JfeladatInputMethodTextChanged
@@ -215,6 +259,12 @@ public class Ablak extends javax.swing.JFrame {
         // TODO add your handling code here:
         System.out.println("feladat");
     }//GEN-LAST:event_JfeladatMouseClicked
+
+    private void jBMegoldasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jBMegoldasMouseClicked
+        // TODO add your handling code here:
+//        System.out.printf(szam+"/"+ oszto+"=");
+//        System.out.println("");
+    }//GEN-LAST:event_jBMegoldasMouseClicked
 
     /**
      * @param args the command line arguments
