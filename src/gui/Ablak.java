@@ -44,13 +44,14 @@ public class Ablak extends javax.swing.JFrame {
         Jfeladat = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         Jvalasz = new javax.swing.JTextField();
+        jBMasikFeladat = new javax.swing.JButton();
+        jBMegoldas = new javax.swing.JButton();
+        jBUjra = new javax.swing.JButton();
+        jPanelStat = new javax.swing.JPanel();
         jLKerdesekSzama = new javax.swing.JLabel();
         jLProbalkozasok = new javax.swing.JLabel();
         jLMuveletrebontas = new javax.swing.JLabel();
         jLSzazalekosEredmeny = new javax.swing.JLabel();
-        jBMasikFeladat = new javax.swing.JButton();
-        jBMegoldas = new javax.swing.JButton();
-        jBUjra = new javax.swing.JButton();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -66,6 +67,7 @@ public class Ablak extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Alapműveletek");
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Összeadás", "Kivonás", "Szorzás", "Osztás" }));
         jComboBox1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -92,14 +94,6 @@ public class Ablak extends javax.swing.JFrame {
 
         jLabel4.setText("=");
 
-        jLKerdesekSzama.setText("Kérdések száma:");
-
-        jLProbalkozasok.setText("Összes próbálkozás:");
-
-        jLMuveletrebontas.setText("Eredmények műveletekre bontása: ");
-
-        jLSzazalekosEredmeny.setText("Elért eredmény százalékos formában:");
-
         jBMasikFeladat.setText("Másik feladatot kérek!");
         jBMasikFeladat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -111,18 +105,50 @@ public class Ablak extends javax.swing.JFrame {
 
         jBUjra.setText("Újra");
 
+        jPanelStat.setBorder(javax.swing.BorderFactory.createTitledBorder("Statisztika"));
+
+        jLKerdesekSzama.setText("Kérdések száma:");
+
+        jLProbalkozasok.setText("Összes próbálkozás:");
+
+        jLMuveletrebontas.setText("Eredmények műveletekre bontása: ");
+
+        jLSzazalekosEredmeny.setText("Elért eredmény százalékos formában:");
+
+        javax.swing.GroupLayout jPanelStatLayout = new javax.swing.GroupLayout(jPanelStat);
+        jPanelStat.setLayout(jPanelStatLayout);
+        jPanelStatLayout.setHorizontalGroup(
+            jPanelStatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelStatLayout.createSequentialGroup()
+                .addGroup(jPanelStatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLProbalkozasok)
+                    .addComponent(jLMuveletrebontas)
+                    .addComponent(jLKerdesekSzama)
+                    .addComponent(jLSzazalekosEredmeny))
+                .addGap(0, 101, Short.MAX_VALUE))
+        );
+        jPanelStatLayout.setVerticalGroup(
+            jPanelStatLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelStatLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLKerdesekSzama)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLProbalkozasok)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLMuveletrebontas)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLSzazalekosEredmeny)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 57, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap(67, Short.MAX_VALUE)
                         .addComponent(jBUjra)
                         .addGap(18, 18, 18)
                         .addComponent(jBMasikFeladat)
@@ -130,17 +156,15 @@ public class Ablak extends javax.swing.JFrame {
                         .addComponent(jBMegoldas))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLProbalkozasok)
-                            .addComponent(jLMuveletrebontas)
-                            .addComponent(jLKerdesekSzama)
-                            .addComponent(jLSzazalekosEredmeny)
+                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(56, 56, 56)
                                 .addComponent(Jfeladat, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Jvalasz, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(Jvalasz, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jPanelStat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -150,24 +174,19 @@ public class Ablak extends javax.swing.JFrame {
                 .addGap(24, 24, 24)
                 .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(Jvalasz, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Jfeladat, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Jfeladat, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel4)
+                        .addComponent(Jvalasz, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jBMasikFeladat)
                     .addComponent(jBMegoldas)
                     .addComponent(jBUjra))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
-                .addComponent(jLKerdesekSzama)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLProbalkozasok)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLMuveletrebontas)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLSzazalekosEredmeny)
-                .addGap(4, 4, 4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanelStat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
@@ -175,16 +194,16 @@ public class Ablak extends javax.swing.JFrame {
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
-        String f = "12-3";
+        String f = "12/3";
         System.out.println();
-                System.out.println("12-2=");
+                System.out.println("12/2=");
                 
      
     }//GEN-LAST:event_jComboBox1ActionPerformed
  
     private void jBMasikFeladatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBMasikFeladatActionPerformed
         // TODO add your handling code here:
-        System.out.println("hello");
+        System.out.println("*másik feladat*");
     }//GEN-LAST:event_jBMasikFeladatActionPerformed
 
     private void JfeladatInputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_JfeladatInputMethodTextChanged
@@ -194,7 +213,7 @@ public class Ablak extends javax.swing.JFrame {
 
     private void JfeladatMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JfeladatMouseClicked
         // TODO add your handling code here:
-        System.out.println("ezaz");
+        System.out.println("feladat");
     }//GEN-LAST:event_JfeladatMouseClicked
 
     /**
@@ -244,6 +263,7 @@ public class Ablak extends javax.swing.JFrame {
     private javax.swing.JLabel jLProbalkozasok;
     private javax.swing.JLabel jLSzazalekosEredmeny;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JPanel jPanelStat;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
